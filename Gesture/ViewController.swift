@@ -9,12 +9,18 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    @IBOutlet var quadrado: UIView!
+    
+    @IBAction func quadradoDidTap(_ sender: UITapGestureRecognizer) {
+        UIView.animate(withDuration: 0.5) {
+            self.quadrado.center = CGPoint(x: Int.random(in: 0...300),
+                                           y: Int.random(in: 0...400))
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
     }
-
-
 }
 
